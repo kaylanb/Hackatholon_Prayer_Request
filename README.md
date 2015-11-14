@@ -4,5 +4,5 @@ Prayer request manager for small Christian groups
 
 ## authors & license
 
-Alex Lopez, Annie Redmond, Kaylan Burleigh
+Alex Lopes, Annie Redmond, Kaylan Burleigh
 
