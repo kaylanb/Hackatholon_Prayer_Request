@@ -15,6 +15,7 @@ var db = require("./models/index");
 app.set("view engine", "ejs");
 
 app.use(express.static("public"));
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/', function(req, res) {
   res.render("index");
@@ -24,6 +25,7 @@ app.get('/', function(req, res) {
 //route for creating a group
 app.post('/api/groups', function (req, res) {
 	var group = req.body;
+	console.log("req.body is: ", req.body);
 	db.Group.create(group, function (err, user) {
 			if (err) console.log(err);
 					
