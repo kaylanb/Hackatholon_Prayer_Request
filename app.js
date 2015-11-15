@@ -4,26 +4,6 @@
 
 
 
-
-
-
-
-
-
-    // var TestObject = Parse.Object.extend("TestObject");
-    // var testObject = new TestObject();
-    //   testObject.save({foo: "bar"}, {
-    //   success: function(object) {
-    //     $(".success").show();
-    //   },
-    //   error: function(model, error) {
-    //     $(".error").show();
-    //   }
-    // });
-
-
-
-
 $(document).ready(function() {
   console.log('sanity check');
   $(".addNumber").on("click", function() {
@@ -33,8 +13,14 @@ $(document).ready(function() {
   });
   $("#groupForm").submit(function(e) {
   	e.preventDefault();
-  	console.log('form submitted');
+  	console.log('group form submitted');
   	$('#createGroup').modal('hide');
   	window.location.href="./group.html";
+  });
+  $("#prayerForm").submit(function(e) {
+    e.preventDefault();
+    console.log('prayer form submitted');
+    $('#newPrayerModal').modal('hide');
+    window.location.href="./newprayer.html";
   });
 });
