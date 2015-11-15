@@ -8,7 +8,7 @@
 
 	<!-- STYLESHEETS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="http://bootswatch.com/readable/bootstrap.min.css"> 
+	<link rel="stylesheet" type="text/css" href="http://bootswatch.com/paper/bootstrap.min.css"> 
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/reset.css">
 
@@ -48,37 +48,41 @@
 	<h1>Group Name</h1>
 </div>
 
-<ul class="list-group">
-  <li class="list-group-item">Pray for my job interview on Wednesday
-      <div align='right'>
-      <figure>
-      <img class="profileImage" src="https://trip101.com/assets/default_profile_pic-9c5d869a996318867438aa3ccf9a9607daee021047c1088645fbdfbbed0e2aec.jpg">
-      <figcaption>Jesus C.</figcaption></figure></div>
-      </li>
-  <li class="list-group-item">Pray for my coworker's Family
-      <div align='right'>
-      <figure>
-      <img class="profileImage" src="https://trip101.com/assets/default_profile_pic-9c5d869a996318867438aa3ccf9a9607daee021047c1088645fbdfbbed0e2aec.jpg">
-      <figcaption>Alex L.</figcaption></figure></div>
-      </li>
-  <li class="list-group-item">Pray for the homeless in the cold
-      <div align='right'>
-      <figure>
-      <img class="profileImage" src="https://trip101.com/assets/default_profile_pic-9c5d869a996318867438aa3ccf9a9607daee021047c1088645fbdfbbed0e2aec.jpg">
-      <figcaption>Annie R.</figcaption></figure></div>
-      </li>
-  <li class="list-group-item">Pray for the weather
-      <div align='right'>
-      <figure>
-      <img class="profileImage" src="https://trip101.com/assets/default_profile_pic-9c5d869a996318867438aa3ccf9a9607daee021047c1088645fbdfbbed0e2aec.jpg">
-      <figcaption>Kaylan B.</figcaption></figure></div>
-      </li>
-</ul>
 
 
-  <div class="newPrayer" align="center">
-    <button type="button" class="btn btn-default" id="newPrayerButton" data-toggle="modal" data-target="#newPrayerModal">Create New Prayer Request</button>
-  </div>
+<div class="newPrayer" align="center">
+  <button type="button" class="btn btn-default" id="newPrayerButton" data-toggle="modal" data-target="#newPrayerModal">New Prayer</button>
+</div>
+
+<div class="col-xs-8 col-xs-offset-2">
+  <ul class="list-group prayerList">
+    <li class="list-group-item">Pray for my job interview on Wednesday
+        <div align='right'>
+        <figure>
+        <img class="profileImage" src="https://trip101.com/assets/default_profile_pic-9c5d869a996318867438aa3ccf9a9607daee021047c1088645fbdfbbed0e2aec.jpg">
+        <figcaption>Jesus C.</figcaption></figure></div>
+        </li>
+    <li class="list-group-item">Pray for my coworker's Family
+        <div align='right'>
+        <figure>
+        <img class="profileImage" src="https://trip101.com/assets/default_profile_pic-9c5d869a996318867438aa3ccf9a9607daee021047c1088645fbdfbbed0e2aec.jpg">
+        <figcaption>Alex L.</figcaption></figure></div>
+        </li>
+    <li class="list-group-item">Pray for the homeless in the cold
+        <div align='right'>
+        <figure>
+        <img class="profileImage" src="https://trip101.com/assets/default_profile_pic-9c5d869a996318867438aa3ccf9a9607daee021047c1088645fbdfbbed0e2aec.jpg">
+        <figcaption>Annie R.</figcaption></figure></div>
+        </li>
+    <li class="list-group-item">Pray for the weather
+        <div align='right'>
+        <figure>
+        <img class="profileImage" src="https://trip101.com/assets/default_profile_pic-9c5d869a996318867438aa3ccf9a9607daee021047c1088645fbdfbbed0e2aec.jpg">
+        <figcaption>Kaylan B.</figcaption></figure></div>
+        </li>
+  </ul>
+</div>
+
 
 
 
@@ -99,11 +103,6 @@
           <div class="form-group">
             <label for="prayerContent">Prayer Request</label>
             <input type="text" class="form-control" id="" placeholder="Prayer Request">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputFile">Upload Image</label>
-            <input type="file" id="exampleInputFile">
-            <p class="help-block"></p>
           </div>
       </div>
       <div class="modal-footer">
