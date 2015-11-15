@@ -1,6 +1,8 @@
 body {
 	font-family: 'Roboto', sans-serif;
-	
+	background-image: url('http://mediad.publicbroadcasting.net/p/shared/npr/201411/363376718.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 h1 {
@@ -16,17 +18,14 @@ h1 {
 h1 {
 
 	text-align: center;
-	
-}
-
-#newPrayerButton {
-	min-height: 50px;
-	font-size: 30px;
+	color: white;
 }
  
 #bigGroup {
 	min-height: 100px;
 	font-size: 40px;
+	margin-top: 400px;
+	box-shadow: 4px 4px 8px black;
 }
 .profileImage {
 	height: 10%;
@@ -45,7 +44,10 @@ h1 {
 	padding-bottom: 0px;
 }
 
-
+/*.btn-primary {
+	background-color: #BCC3C1;
+	color: black;
+}*/
 
 
 

@@ -7,7 +7,7 @@
 <% include ./_nav %>
 <% var group; %>
 <div class="page-header text-center">
-	<h1>Jesus' Christian Group</h1>
+	<h1>Tuesday Bible Study Group</h1>
 </div>
 
 
@@ -19,40 +19,40 @@
 <div class="col-sm-8 col-sm-offset-2">
   <ul class="list-group prayerList">
   <% for(var i = group.posts.length - 1; i>=0; i--) { %>
-    <li class="list-group-item">Your prayer request:<br><br>
+    <li class="list-group-item new-prayer"><img style="float:left" class="profileImage" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAARuAAAAJDY5MmYzNDBkLTY2YmEtNGRkYy05ZmVmLWYzMDE3MmUyMTMyNg.jpg">
+        <figcaption><strong>Annie R.</strong></figcaption></figure>
     <%=group.posts[i].content%>
     <div align='right'>
-    <figure>
+   
     <button type="button" data-id='<%=group.posts[i]._id%>' class="btn btn-default btn-lg deleteButton" data-toggle='modal' data-target='#deleteModal' aria-label="Left Align">
       <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
     </button>
     <br>
-    <br></figure></div>
+    <br></div>
     </li>
   <% } %>
-    <li class="list-group-item">Pray for my job interview on Wednesday
-        <div align='left'>
-        <figure>
-        <img class="profileImage" src="https://trip101.com/assets/default_profile_pic-9c5d869a996318867438aa3ccf9a9607daee021047c1088645fbdfbbed0e2aec.jpg">
-        <figcaption>Jesus C.</figcaption></figure></div>
+    <li class="list-group-item">
+      <figure>
+        <img style="float:left" class="profileImage" src="https://trip101.com/assets/default_profile_pic-9c5d869a996318867438aa3ccf9a9607daee021047c1088645fbdfbbed0e2aec.jpg">
+        <figcaption><strong>Jared C.</strong></figcaption></figure>Pray for my job interview on Wednesday<p class="pull-right">- Posted 1 day ago</p>
+       
         </li>
-    <li class="list-group-item">Pray for my coworker's family
+    <li class="list-group-item"><figure>
+        <img style="float:left" class="profileImage" src="https://media.licdn.com/media/AAEAAQAAAAAAAAVwAAAAJDM2MmM2NzRmLTRiODQtNDRlYS05ZjRkLWFkMzE4YTAxZGFjMw.jpg">
+        <figcaption><strong>Alex L.</strong></figcaption></figure>Pray for my coworker's family<p class="pull-right">- Posted 3 days ago</p>
         <div align='left'>
-        <figure>
-        <img class="profileImage" src="https://media.licdn.com/media/AAEAAQAAAAAAAAVwAAAAJDM2MmM2NzRmLTRiODQtNDRlYS05ZjRkLWFkMzE4YTAxZGFjMw.jpg">
-        <figcaption>Alex L.</figcaption></figure></div>
+        </div>
         </li>
-    <li class="list-group-item">Pray for my friend struggling with depression
+    <li class="list-group-item"><figure>
+        <img style="float:left" class="profileImage" src="https://trip101.com/assets/default_profile_pic-9c5d869a996318867438aa3ccf9a9607daee021047c1088645fbdfbbed0e2aec.jpg">
+        <figcaption><strong>Jennie K.</strong></figcaption></figure>Pray for my friend struggling with depression<p class="pull-right">- Posted 3 days ago</p>
         <div align='left'>
-        <figure>
-        <img class="profileImage" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAARuAAAAJDY5MmYzNDBkLTY2YmEtNGRkYy05ZmVmLWYzMDE3MmUyMTMyNg.jpg">
-        <figcaption>Annie R.</figcaption></figure></div>
+        
         </li>
-    <li class="list-group-item">Pray for my upcoming mission trip
-        <div align='left'>
-        <figure>
-        <img class="profileImage" src="https://trip101.com/assets/default_profile_pic-9c5d869a996318867438aa3ccf9a9607daee021047c1088645fbdfbbed0e2aec.jpg">
-        <figcaption>Kaylan B.</figcaption></figure></div>
+    <li class="list-group-item"><figure>
+        <img style="float:left" class="profileImage" src="https://trip101.com/assets/default_profile_pic-9c5d869a996318867438aa3ccf9a9607daee021047c1088645fbdfbbed0e2aec.jpg">
+        <figcaption><strong>Kaylan B.</strong></figcaption></figure>Pray for my upcoming mission trip<p class="pull-right">- Posted 4 days ago</p>
+        
         </li>
   </ul>
 </div>
