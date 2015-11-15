@@ -75,5 +75,46 @@
       </li>
 </ul>
 
+
+  <div class="newPrayer" align="center">
+    <button type="button" class="btn btn-default" id="newPrayerButton" data-toggle="modal" data-target="#newPrayerModal">Create New Prayer Request</button>
+  </div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="newPrayerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Create a new prayer request!</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="prayerRequester">Name</label>
+            <input type="text" class="form-control" id="" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <label for="prayerContent">Prayer Request</label>
+            <input type="text" class="form-control" id="" placeholder="Prayer Request">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputFile">Upload Image</label>
+            <input type="file" id="exampleInputFile">
+            <p class="help-block"></p>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newPrayerModal">Create New Prayer Request</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
 </body>
 </html>
