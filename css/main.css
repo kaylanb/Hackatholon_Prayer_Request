@@ -1,11 +1,35 @@
+/*h1 { 
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400; 
+}*/
+
 .profileImage {
-	height: 10%;
-	width: 10%;
+	height: 5%;
+	width: 5%;
 }
 
 .prayerList li {
-	margin: 20px;
 	box-shadow: 1px 1px 4px;
+}
 
+body {
+	font-family: 'Roboto', sans-serif;
+	font-weight:700;
+}
+
+.prayerName {
+	font-weight:700;
+}
+
+.prayerText {
+	font-weight:400;
+}
+
+.createButton {
+	position:absolute;
+	bottom:2.5%;
+	left:2.5%;
+	width:95%;
+	height:50%;
 }
 
