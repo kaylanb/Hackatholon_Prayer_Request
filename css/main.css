@@ -2,3 +2,10 @@
 	height: 10%;
 	width: 10%;
 }
+
+.prayerList li {
+	margin: 20px;
+	box-shadow: 1px 1px 4px;
+
+}
+
