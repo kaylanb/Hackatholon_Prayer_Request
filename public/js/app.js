@@ -14,39 +14,90 @@ $(document).ready(function() {
   	e.preventDefault();
   	console.log('form submitted');
   	$('#createGroup').modal('hide');
-    
-  	window.location.href="./group.html";
-  });
-});
-
-
-
-//When new prayer request is submitted
-  $('#new-request').on('submit', function(e) {
-    e.preventDefault();
-    console.log('form submitted');
-    var userId = $('#new-request-input').attr('data-id');
-    console.log("userID is: " + userId);
-    var formData = $('#new-request-input').serialize();
-    console.log("formData is: " + formData);
-    var newRequest = $( '#new-request-input').val();
-    console.log("request is: " + newRequest);
-    $('#new-request')[0].reset();
+    var formData = $("#groupName").serialize();
+    console.log("formData is: ", formData);
+    $('#groupForm')[0].reset();
     $.ajax({
-      url: '/api/users/' + userId + '/requests',
+      url: '/api/groups',
       type: "POST",
       data: formData
     })
-    .done(function(request) {
-      console.log("made a new post");
-        // var requestHtml = "<li class='well' data-id='" + request._id + "'>" + newRequest + "<p><strong>Prayer count: <span class='pray-count'>" + request.prayerCount + " </span></strong></p><button type='button' data-id='" + request._id + "' class='btn btn-default btn-lg openModal owner' data-toggle='modal' data-target='#answeredModal'>Answered</button><button type='button' data-id='" + request._id + "' class='close owner deleteModal' data-target='#deletedModal' data-toggle='modal' data-placement='top' title='Delete prayer request' aria-label='Close'><span aria-hidden='true'>X</span></button><label><button type='button' class='btn btn-default btn-xs count visitor'>I prayed for this request</button><label></li>";
-        // $('.active').prepend(requestHtml);
-        // checkAuth();
-        location.reload();
-      });
+    .done(function(data) {
+      console.log('group is: ', data);
 
+      window.location.href = "/groups/" + data._id;
+    });
+    
+  });
+
+  //when demo prayer is submitted
+  $('#demoPost').submit(function(e) {
+    e.preventDefault();
+    console.log("new post form submitted");
+    var formData = $('#demoPost').serialize();
+    console.log(formData);
+    $.ajax({
+      url: '/api/groups/5648dabd521bb4ab58ffd78e/posts',
+      type: "POST",
+      data: formData
+    })
+    .done(function(data) {
+      console.log("groupis: ", data);
+      location.reload();
+    });
+  });
+
+  //when demo prayer is deleted
+  $('.confirmDelete').on('submit', function(e) {
+    e.preventDefault();
+    console.log("delete button clicked");
+
+  });
+
+
+  // When new prayer is submitted
+  $('#newPost').submit(function(e) {
+    e.preventDefault();
+    console.log("form submitted");
+    var groupId = $('#newPost').attr('data-id');
+    var formData = $('#newPost').serialize();
+    console.log("form data is: ", formData);
+    $('#newPost')[0].reset();
+    $.ajax({
+      url: '/api/groups/' + groupId + '/posts',
+      type: "POST",
+      data: formData
+    })
+    .done(function(data) {
+      location.reload();
     });
 
+  });
+
+
+//give form in modal a data-id based on the request
+  $('.deleteButton').on('click', function() {
+    var id = $(this).attr('data-id');
+    $('.deleteForm').attr('data-id', id);
+  });
+
+
+
+  // //When delete button is clicked remove post
+  $('.deleteForm').on('submit', function(e) {
+    e.preventDefault();
+    console.log("delet button clicked");
+    var postId = $(this).data('id');
+    var groupId = $('#newPrayerButton').attr('data-id');
+    $.ajax({
+      url: '/api/groups/' + groupId + '/posts/' + postId,
+      type: "DELETE"
+    })
+    .done(function (data) {
+      location.reload();
+      
+    });
+  });
 
 // Parse.initialize("eML2hkSVPkvyFxBNGC4zZPWRzvfmzsAejgYYL1R7", "vVZp9dKPlLekJoHTq0mYkU054enNsp208JOOygcG");
 //     console.log("Parse is working");
@@ -73,3 +124,5 @@ $(document).ready(function() {
 
 
 
+
+});

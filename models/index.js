@@ -12,5 +12,5 @@ db.once('open', function (callback) {
   console.log("db is open for business");
 });
 
-module.exports.User = require('./group.js');
+module.exports.Group = require('./group.js');
 

@@ -18,6 +18,7 @@ var PostSchema = new Schema ({
 
 var GroupSchema = new Schema ({
 	name: {type: String, required: true},
+	createdAt: { type: Date, default: Date.now },
 	posts: [PostSchema]
 });
 
@@ -29,5 +30,21 @@ var Group = mongoose.model('Group', GroupSchema);
 
 
 module.exports = Group;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
