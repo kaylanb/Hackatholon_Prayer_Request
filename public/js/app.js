@@ -14,8 +14,15 @@ $(document).ready(function() {
   	e.preventDefault();
   	console.log('form submitted');
   	$('#createGroup').modal('hide');
+    var formData = $("#groupName").serialize();
+    console.log("formData is: ", formData);
+    $.ajax({
+      url: '/api/groups',
+      type: "POST",
+      data: formData
+    });
     
-  	window.location.href="./group.html";
+  	
   });
 });
 

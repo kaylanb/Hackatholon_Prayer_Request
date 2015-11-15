@@ -21,7 +21,15 @@ app.get('/', function(req, res) {
 });
 
 
-
+//route for creating a group
+app.post('/api/groups', function (req, res) {
+	var group = req.body;
+	db.Group.create(group, function (err, user) {
+			if (err) console.log(err);
+					
+		res.json(group);
+	});	
+});
 
 
 
