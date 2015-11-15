@@ -56,6 +56,34 @@ app.post('/api/groups/:id/posts', function (req, res) {
 	});
 });
 
+//route for creating demo post
+app.post('api/groups/:id/posts', function (req, res) {
+	console.log("got request for new prayer");
+	db.Group.findById( "5648dabd521bb4ab58ffd78e", function (err, group) {
+		console.log("group is: ", group);
+		console.log('req.body is', req.body);
+		group.posts.push(req.body);
+		group.save(function (err) {
+			if(err) console.log(err);
+			res.json(group);
+		});
+	});
+});
+
+//route for deleting demo post
+// app.delete('')
+
+//route for deleting a request
+app.delete('/api/groups/:groupid/posts/:id', function (req, res) {
+	db.Group.findById( req.params.groupid, function (err, group) {
+		console.log("group is: ", group);
+		group.posts.id(req.params.id).remove();
+		group.save(function (err) {
+			if (err) console.log(err);
+			res.json(group);
+		});
+	});
+});
 
 //route for creating a request
 // app.post('/api/users/:id/requests', function (req, res) {
@@ -77,7 +105,10 @@ app.post('/api/groups/:id/posts', function (req, res) {
 
 //route for demo page
 app.get('/demo', function(req, res) {
-	res.render("demo");
+	db.Group.findById('5648dabd521bb4ab58ffd78e', function (err, group) {
+		if (err) console.log(err);
+		res.render("demo", {group: group});
+	}); 
 	
 });
 

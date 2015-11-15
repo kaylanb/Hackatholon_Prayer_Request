@@ -5,7 +5,7 @@
 </head>
 <body>
 <% include ./_nav %>
-
+<% var group; %>
 <div class="page-header text-center">
 	<h1>Jesus' Christian Group</h1>
 </div>
@@ -13,11 +13,23 @@
 
 
 <div class="newPrayer" align="center">
-  <button type="button" class="btn btn-default" disabled="on" id="newPrayerButton" data-toggle="modal" data-target="#newPrayerModal">New Prayer</button>
+  <button type="button" class="btn btn-default" id="newPrayerButton" data-id='<%=group._id%>' data-toggle="modal" data-target="#newPrayerModal">New Prayer</button>
 </div>
 
 <div class="col-sm-8 col-sm-offset-2">
   <ul class="list-group prayerList">
+  <% for(var i = group.posts.length - 1; i>=0; i--) { %>
+    <li class="list-group-item">Your prayer request:<br><br>
+    <%=group.posts[i].content%>
+    <div align='right'>
+    <figure>
+    <button type="button" data-id='<%=group.posts[i]._id%>' class="btn btn-default btn-lg deleteButton" data-toggle='modal' data-target='#deleteModal' aria-label="Left Align">
+      <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+    </button>
+    <br>
+    <br></figure></div>
+    </li>
+  <% } %>
     <li class="list-group-item">Pray for my job interview on Wednesday
         <div align='right'>
         <figure>
@@ -57,24 +69,44 @@
         <h4 class="modal-title" id="myModalLabel">Hey God, are you listening?</h4>
       </div>
       <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="prayerRequester">Name</label>
-            <input type="text" class="form-control" id="" placeholder="Name">
-          </div>
+        <form id="demoPost">
           <div class="form-group">
             <label for="prayerContent">Prayer Request</label>
-            <textarea type="text" class="form-control" id="" ></textarea> 
+            <input type="text" name="content" class="form-control" id="newPostContent" >
           </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newPrayerModal">Send to Group</button>
+        <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#newPrayerModal">Send to Group</button>
       </div>
       </form>
     </div>
   </div>
 </div>
 
+<!-- Modal for delete button -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" id="delete-modal" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Permanently delete prayer request?</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal deleteForm">
+          <div class="form-group">
+            <label for="inputAnswered" class="col-sm-3 control-label"></label>
+            <div class="col-sm-9">
+              
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" id="close-modal" data-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary confirmDelete" id="">Delete</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
 
 </body>
