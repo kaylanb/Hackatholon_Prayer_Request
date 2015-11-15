@@ -9,10 +9,6 @@
 	margin-right:2%;
 }
 
-.trashButton {
-	margin-right:3%;
-}
-
 .prayerList li {
 	box-shadow: 1px 1px 4px;
 }
@@ -20,6 +16,9 @@
 body {
 	font-family: 'Roboto', sans-serif;
 	font-weight:700;
+	background-image:url('http://mediad.publicbroadcasting.net/p/shared/npr/201411/363376718.jpg');
+	background-repeat: no-repeat;
+	background-size:cover;
 }
 
 /*#indexBgImage {
